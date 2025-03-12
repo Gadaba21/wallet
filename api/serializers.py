@@ -29,7 +29,8 @@ class OperationPostSerializer(serializers.ModelSerializer):
         if 'amount' not in validated_data:
             raise serializers.ValidationError("Поле 'amount' обязательно.")
         wallet_uuid = self.context['wallet_uuid']
-        wallet = Wallet.objects.filter(wallet_uuid=wallet_uuid).first()
+        wallet = Wallet.objects.filter(
+            wallet_uuid=wallet_uuid).select_for_update()
         if not wallet:
             raise serializers.ValidationError(
                 'Нельзя положить деньги на несуществующий счет.')
