@@ -1,6 +1,7 @@
-from django.db import models
 import uuid
+
 from django.core.validators import MaxValueValidator, MinValueValidator
+from django.db import models
 
 from api.constants import MAX_LENGTH_TYPE, MAX_VALUE_AMOUNT, MIN_VALUE_AMOUNT
 

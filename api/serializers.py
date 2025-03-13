@@ -1,6 +1,7 @@
 from rest_framework import serializers
 
 from api.constants import MAX_VALUE_AMOUNT, MIN_VALUE_AMOUNT
+
 from .models import Operation, Wallet
 
 

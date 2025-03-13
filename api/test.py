@@ -1,6 +1,7 @@
 from django.test import TestCase
 from django.urls import reverse
-from .models import Wallet, Operation
+
+from .models import Operation, Wallet
 
 
 class TestOperationCreation(TestCase):
